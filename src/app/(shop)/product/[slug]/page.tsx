@@ -4,13 +4,11 @@ import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 
 interface Props {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>
 }
 
 
-export default async function Product({ params }: Props) {
+export default async function ProductBySlug({ params }: Props) {
 
   const { slug } = await params;
   const product = initialData.products.find( product => product.slug === slug);

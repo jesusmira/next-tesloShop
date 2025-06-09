@@ -13,12 +13,10 @@ const productsInCart = [
 ];
 
 interface Props {
-  params:{
-    id: string;
-  }
+  params:Promise<{ id: string }>
 }
 
-export default async function({ params }: Props) {
+export default async function OrderByIdPage({ params }: Props) {
 
   const { id } = await params;
 
