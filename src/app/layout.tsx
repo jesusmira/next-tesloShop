@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { geistMono, geistSans } from "@/config/fonts";
 import "./globals.css";
+import { Provider } from "@/components";
 
 
 
@@ -22,7 +23,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
   );
