@@ -17,3 +17,29 @@
 
 
 ## Correr en prod
+
+
+
+## Tips
+- Por si tienes problemas con las siguientes reglas de tailwindcss en vscode
+<pre>
+    Unknown at rule @plugin css(unknownAtRules)
+    Unknown at rule @custom-variant css(unknownAtRules)
+    Unknown at rule @theme css(unknownAtRules)
+    Unknown at rule @utility css(unknownAtRules)
+    Unknown at rule @variant css(unknownAtRules)
+    Unknown at rule @apply css(unknownAtRules)
+    Unknown at rule @source css(unknownAtRules)
+    Unknown at rule @reference css(unknownAtRules)
+</pre>
+
+
+- Instalar la extensión de VSCode [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+
+- Agregar la siguiente configuración a ```.vscode/settings.json```
+<pre>
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.scss": "tailwindcss",
+    },
+</pre>

@@ -12,8 +12,8 @@ export const authConfig: NextAuthConfig = {
   callbacks:{
     authorized({ auth, request: { nextUrl } }) {
 
-      console.log('en authorized callback');
-      console.log({auth});
+      // console.log('en authorized callback');
+      // console.log({auth});
       // const isLoggedIn = !!auth?.user;
       // const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
       // if (isOnDashboard) {
@@ -32,7 +32,7 @@ export const authConfig: NextAuthConfig = {
       return token;
     },
     session({session, token}) {
-      console.log({session, token});
+      // console.log({session, token});
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       session.user = token.data as any ;
 
