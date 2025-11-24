@@ -33,7 +33,6 @@ export const AddressForm = ({ countries, userStoreAddress = {} }: Props) => {
   
   const { handleSubmit, register, formState: { isValid }, reset } = useForm<FormInputs>({
     defaultValues: {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ...(userStoreAddress as any),
       rememberAddress: false,
     },
@@ -55,11 +54,10 @@ export const AddressForm = ({ countries, userStoreAddress = {} }: Props) => {
 
 
   const onSubmit = async(data: FormInputs) => {
-    console.log(data);
 
-     setAddress(data);
-
+    
     const { rememberAddress, ...restAddress } = data;
+    setAddress(restAddress);
 
     if ( data.rememberAddress ){
       await setUserAddress(data, session!.user.id);

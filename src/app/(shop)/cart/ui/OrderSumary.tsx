@@ -11,6 +11,7 @@ export const OrderSumary = () => {
 
     const { getSummaryInformation } = useCartStore() 
     const { itemsInCart, subtotal, tax, total } = getSummaryInformation()
+    // const { itemsInCart, subtotal, tax, total,  } = useCartStore((state) => state.getSummaryInformation()) ;
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
