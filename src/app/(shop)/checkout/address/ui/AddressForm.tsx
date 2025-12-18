@@ -45,11 +45,11 @@ export const AddressForm = ({ countries, userStoreAddress = {} }: Props) => {
   const  address  = useAddressStore( state => state.address);
 
   useEffect(() => {
-    if ( address.firstName ){
+    if ( address && address.firstName ){
       reset(address);
     }
 
-  }, [address, reset])
+  }, [address.firstName, address, reset])
   
 
 
@@ -58,8 +58,9 @@ export const AddressForm = ({ countries, userStoreAddress = {} }: Props) => {
     
     const { rememberAddress, ...restAddress } = data;
     setAddress(restAddress);
+    console.log({rememberAddress})
 
-    if ( data.rememberAddress ){
+    if ( rememberAddress ){
       await setUserAddress(data, session!.user.id);
     }else{
       await deleteUserAddress(session!.user.id);
