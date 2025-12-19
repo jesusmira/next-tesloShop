@@ -33,7 +33,6 @@ export const authConfig: NextAuthConfig = {
     },
     session({session, token}) {
       // console.log({session, token});
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       session.user = token.data as any ;
 
 
